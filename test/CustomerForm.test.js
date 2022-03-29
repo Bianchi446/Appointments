@@ -11,11 +11,18 @@ describe('CustomerForm', () => {
 
     const form = id => container.querySelector(`form[id="${id}"]`);
 
+    const firstNameField = () => form('customer').elements.firstName;
+
     const expectToBeInputOfTypeText = formElement => {
         expect(formElement).not.toBeNull();
         expect(formElement.tagName).toEqual('INPUT');
         expect(formElement.type).toEqual('text')
     }
+
+    it('includes the existing value for the first name', () => {
+        render(<CustomerForm/>);
+        expectToBeInputOfTypeText(firstNameField());
+    })
 
     it('renders a form', () => {
         render(<CustomerForm />);
@@ -31,5 +38,11 @@ describe('CustomerForm', () => {
         expect(field.tagName).toEqual('INPUT');
         expect(field.type).toEqual('text')
     })    
+
+    it('includes the existing value for the first name', () => {
+        render(<CustomerForm firstName="Ashley"/>);
+        const field = form('customer').elements.firstName;
+        expect(firstNameField().value).toEqual('Ashley')
+    })
 });
 
