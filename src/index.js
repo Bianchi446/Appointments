@@ -1,6 +1,6 @@
 import React from 'react';
-import  ReactDOM  from 'react';
-import { AppointmentsDayView } from './Appointment';
+import  ReactDOM  from 'react-dom';
+import { AppointmentsDayView } from './AppointmentDayView';
 import { sampleAppointments } from './sampleData';
 
 ReactDOM.render(
