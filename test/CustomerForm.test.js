@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { createContainer } from "./domManipulators";
 import { CustomerForm } from "../src/CustomerForm";
 import ReactTestUtils from 'react-dom/test-utils'
@@ -67,8 +67,12 @@ describe('CustomerForm', () => {
             firstName="Ashley"
             onSubmit={({ firstName }) => expect(firstName).toEqual('Ashley')}     // Assert Phase
             />
-        )
+        );
+        await ReactTestUtils.Simulate.change(firstNameField() ,  {
+            target : {value : "Ashley"}
+        })
         await ReactTestUtils.Simulate.submit(form('customer'));
     });
+    
 });
 
