@@ -4,11 +4,16 @@
   "description": "Appointments system",
   "main": "index.js",
   "scripts": {
-    "test": "jest ",
+    "test": "jest",
     "build": "webpack"
   },
   "jest": {
     "testEnvironment": "jsdom"
+  },
+  "env": {
+    "plugins": [
+      "@babel/plugin-transform-modules-commonjs"
+    ]
   },
   "repository": {
     "type": "git",
