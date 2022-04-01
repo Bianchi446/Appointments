@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import './styles/app.scss'
+import ".//styles/app.scss"
+
 
 export const Appointment = ({ customer, stylist, service, notes }) => {
     return(
