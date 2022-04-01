@@ -39,4 +39,8 @@ it('renders a form', () => {
         expect(firstNameField().value).toEqual('Ashley');
     });
 
+    it('renders a label for the first name field', () => {
+        render();
+        expect(labelFor('firstName').textContent).toEqual('First name')
+    });
 })
